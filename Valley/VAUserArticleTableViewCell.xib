@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="VAUserArticleTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="239"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fengmian" translatesAutoresizingMaskIntoConstraints="NO" id="V5o-VV-7Pl">
+                        <rect key="frame" x="8" y="8" width="359" height="110"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7y-Ze-ecC">
+                        <rect key="frame" x="8" y="126" width="359" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="aqJ-MN-0C9"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewF-h9-HX8">
+                        <rect key="frame" x="8" y="159" width="350" height="60"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="dIX-yQ-fZe"/>
+                        </constraints>
+                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="ewF-h9-HX8" secondAttribute="bottom" constant="12" id="1S8-tX-M59"/>
+                    <constraint firstItem="V5o-VV-7Pl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="2p4-cj-umU"/>
+                    <constraint firstItem="V5o-VV-7Pl" firstAttribute="leading" secondItem="t7y-Ze-ecC" secondAttribute="leading" id="CQb-s9-cPh"/>
+                    <constraint firstItem="ewF-h9-HX8" firstAttribute="top" secondItem="t7y-Ze-ecC" secondAttribute="bottom" constant="8" symbolic="YES" id="DXq-Lg-eDj"/>
+                    <constraint firstItem="V5o-VV-7Pl" firstAttribute="trailing" secondItem="t7y-Ze-ecC" secondAttribute="trailing" id="J4X-l7-kIU"/>
+                    <constraint firstItem="t7y-Ze-ecC" firstAttribute="top" secondItem="V5o-VV-7Pl" secondAttribute="bottom" constant="8" symbolic="YES" id="MU6-dm-Pb8"/>
+                    <constraint firstItem="V5o-VV-7Pl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="bYC-BL-ImO"/>
+                    <constraint firstItem="t7y-Ze-ecC" firstAttribute="leading" secondItem="ewF-h9-HX8" secondAttribute="leading" id="ejC-QB-20K"/>
+                    <constraint firstItem="V5o-VV-7Pl" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="f3P-mX-Mqd"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ewF-h9-HX8" secondAttribute="trailing" constant="9" id="pIf-9S-t8v"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="contentTextView" destination="ewF-h9-HX8" id="aIA-Xb-6KY"/>
+                <outlet property="newsRahmen" destination="V5o-VV-7Pl" id="UZJ-5W-E6d"/>
+                <outlet property="titleLabel" destination="t7y-Ze-ecC" id="vjr-Pr-EWT"/>
+            </connections>
+            <point key="canvasLocation" x="496.5" y="426"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="fengmian" width="70" height="70"/>
+    </resources>
+</document>

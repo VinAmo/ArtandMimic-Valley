@@ -1,0 +1,49 @@
+//
+//  VA-Prefix.pch
+//
+//
+//  Created by V on 12/12/2015.
+//  Copyright © 2015 V. All rights reserved.
+//
+
+#ifndef VA_Prefix_pch
+#define VA_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#import <Masonry/Masonry.h>
+#import <UMengSocial/UMSocial.h>
+#import <AFNetworking/AFNetworking.h>
+#import <MagicalRecord/MagicalRecord.h>
+
+#import <MJRefresh/MJRefresh.h>
+#import <SVProgressHUD/SVProgressHUD.h>
+#import <MBProgressHUD/MBProgressHUD.h>
+#import <SDCycleScrollView/SDCycleScrollView.h>
+#import <MMDrawerController/MMDrawerController.h>
+
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <WebASDKImageManager/WebASDKImageManager.h>
+#import <UIActivityIndicator-for-SDWebImage/UIImageView+UIActivityIndicatorForSDWebImage.h>
+
+#import "VAWell.h"
+#import "VAVictim.h"
+#import "VAPalette.h"
+#import "VAMacroUtils.h"
+
+#import "UMessage.h"
+
+#endif
+
+#endif /* VA_Prefix_pch */

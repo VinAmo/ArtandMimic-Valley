@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15C50" minimumToolsVersion="Xcode 7.0">
+    <entity name="VAArticleSubject" representedClassName="VAArticleSubject" syncable="YES">
+        <attribute name="articleID" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="row_id"/>
+            </userInfo>
+        </attribute>
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createIP" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="create_ip"/>
+            </userInfo>
+        </attribute>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isBlock" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="is_block"/>
+            </userInfo>
+        </attribute>
+        <attribute name="isDel" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="is_del"/>
+            </userInfo>
+        </attribute>
+        <attribute name="isLiked" optional="YES" attributeType="Boolean" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="is_liked"/>
+            </userInfo>
+        </attribute>
+        <attribute name="isOwner" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="is_ownr"/>
+            </userInfo>
+        </attribute>
+        <attribute name="isShowFeed" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="is_show_feed"/>
+            </userInfo>
+        </attribute>
+        <attribute name="isShowHome" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="is_show_home"/>
+            </userInfo>
+        </attribute>
+        <attribute name="mtime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numComment" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="num_comment"/>
+            </userInfo>
+        </attribute>
+        <attribute name="numLiked" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="num_liked"/>
+            </userInfo>
+        </attribute>
+        <attribute name="numView" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="num_view"/>
+            </userInfo>
+        </attribute>
+        <attribute name="pid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rowType" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="row_type"/>
+            </userInfo>
+        </attribute>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subtitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="version" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="liked" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="VAUser" inverseName="likedArticle" inverseEntity="VAUser" syncable="YES"/>
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="VATag" inverseName="article" inverseEntity="VATag" syncable="YES">
+            <userInfo>
+                <entry key="relatedByAttribute" value="tagID"/>
+            </userInfo>
+        </relationship>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VAUser" inverseName="article" inverseEntity="VAUser" syncable="YES"/>
+        <userInfo>
+            <entry key="relatedByAttribute" value="articleID"/>
+        </userInfo>
+    </entity>
+    <entity name="VAArtistSubject" representedClassName="VAArtistSubject" syncable="YES">
+        <attribute name="pid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subjectID" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="uid"/>
+            </userInfo>
+        </attribute>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VAUser" inverseName="artistSubject" inverseEntity="VAUser" syncable="YES"/>
+        <relationship name="works" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="VAWork" inverseName="artistSubject" inverseEntity="VAWork" syncable="YES"/>
+        <userInfo>
+            <entry key="relatedByAttribute" value="subjectID"/>
+        </userInfo>
+    </entity>
+    <entity name="VAArtSubject" representedClassName="VAArtSubject" parentEntity="VAWork" syncable="YES">
+        <userInfo>
+            <entry key="relatedByAttribute" value="workID"/>
+        </userInfo>
+    </entity>
+    <entity name="VACategory" representedClassName="VACategory" syncable="YES">
+        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="categoryID" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="cat_id"/>
+            </userInfo>
+        </attribute>
+        <attribute name="isThree" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="is_three"/>
+            </userInfo>
+        </attribute>
+        <relationship name="art" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VAWork" inverseName="cate" inverseEntity="VAWork" syncable="YES"/>
+        <userInfo>
+            <entry key="relatedByAttribute" value="categoryID"/>
+        </userInfo>
+    </entity>
+    <entity name="VAExhibitSubject" representedClassName="VAExhibitSubject" parentEntity="VAWork" syncable="YES">
+        <userInfo>
+            <entry key="relatedByAttribute" value="workID"/>
+        </userInfo>
+    </entity>
+    <entity name="VAHotSubject" representedClassName="VAHotSubject" parentEntity="VAWork" syncable="YES">
+        <userInfo>
+            <entry key="relatedByAttribute" value="workID"/>
+        </userInfo>
+    </entity>
+    <entity name="VAPersonageSubject" representedClassName="VAPersonageSubject" parentEntity="VAWork" syncable="YES">
+        <userInfo>
+            <entry key="relatedByAttribute" value="workID"/>
+        </userInfo>
+    </entity>
+    <entity name="VAPicture" representedClassName="VAPicture" syncable="YES">
+        <attribute name="bj" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="h" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="pictureID" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="pid"/>
+            </userInfo>
+        </attribute>
+        <attribute name="w" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="art" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VAWork" inverseName="pics" inverseEntity="VAWork" syncable="YES"/>
+        <userInfo>
+            <entry key="relatedByAttribute" value="pictureID"/>
+        </userInfo>
+    </entity>
+    <entity name="VAReadSubject" representedClassName="VAReadSubject" parentEntity="VAWork" syncable="YES">
+        <userInfo>
+            <entry key="relatedByAttribute" value="workID"/>
+        </userInfo>
+    </entity>
+    <entity name="VASaleSubject" representedClassName="VASaleSubject" parentEntity="VAWork" syncable="YES">
+        <userInfo>
+            <entry key="relatedByAttribute" value="workID"/>
+        </userInfo>
+    </entity>
+    <entity name="VASize" representedClassName="VASize" syncable="YES">
+        <attribute name="l" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="rl" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="rw" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="sizeID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="w" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="art" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VAWork" inverseName="size" inverseEntity="VAWork" syncable="YES"/>
+        <userInfo>
+            <entry key="relatedByAttribute" value="sizeID"/>
+        </userInfo>
+    </entity>
+    <entity name="VATag" representedClassName="VATag" syncable="YES">
+        <attribute name="tagID" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="article" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VAArticleSubject" inverseName="tags" inverseEntity="VAArticleSubject" syncable="YES"/>
+        <userInfo>
+            <entry key="relatedByAttribute" value="tagID"/>
+        </userInfo>
+    </entity>
+    <entity name="VAUser" representedClassName="VAUser" syncable="YES">
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cover" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="domain" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isArtist" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="is_artist"/>
+            </userInfo>
+        </attribute>
+        <attribute name="isCollect" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="is_collect"/>
+            </userInfo>
+        </attribute>
+        <attribute name="isDel" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="is_del"/>
+            </userInfo>
+        </attribute>
+        <attribute name="isFollow" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="is_follow"/>
+            </userInfo>
+        </attribute>
+        <attribute name="isKill" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="is_kill"/>
+            </userInfo>
+        </attribute>
+        <attribute name="isOpenLiked" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="is_open_liked"/>
+            </userInfo>
+        </attribute>
+        <attribute name="isVerify" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="is_verfiy"/>
+            </userInfo>
+        </attribute>
+        <attribute name="numAbout" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="num_about"/>
+            </userInfo>
+        </attribute>
+        <attribute name="numFollowed" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="num_followed"/>
+            </userInfo>
+        </attribute>
+        <attribute name="numLiked" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="num_liked"/>
+            </userInfo>
+        </attribute>
+        <attribute name="numWork" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="num_work"/>
+            </userInfo>
+        </attribute>
+        <attribute name="resume" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="role" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userID" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="uid"/>
+            </userInfo>
+        </attribute>
+        <attribute name="version" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="art" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VAWork" inverseName="user" inverseEntity="VAWork" syncable="YES"/>
+        <relationship name="article" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VAArticleSubject" inverseName="user" inverseEntity="VAArticleSubject" syncable="YES"/>
+        <relationship name="artistSubject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VAArtistSubject" inverseName="user" inverseEntity="VAArtistSubject" syncable="YES"/>
+        <relationship name="likedArt" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VAWork" inverseName="liked" inverseEntity="VAWork" syncable="YES"/>
+        <relationship name="likedArticle" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VAArticleSubject" inverseName="liked" inverseEntity="VAArticleSubject" syncable="YES"/>
+        <userInfo>
+            <entry key="relatedByAttribute" value="userID"/>
+        </userInfo>
+    </entity>
+    <entity name="VAUserArticleSubject" representedClassName="VAUserArticleSubject" parentEntity="VAArticleSubject" syncable="YES">
+        <userInfo>
+            <entry key="relatedByAttribute" value="articleID"/>
+        </userInfo>
+    </entity>
+    <entity name="VAUserCollectionSubject" representedClassName="VAUserCollectionSubject" syncable="YES">
+        <attribute name="atime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="coverID" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="cover_id"/>
+            </userInfo>
+        </attribute>
+        <attribute name="isDel" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="is_del"/>
+            </userInfo>
+        </attribute>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numWork" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="num_work"/>
+            </userInfo>
+        </attribute>
+        <attribute name="sort" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subjectID" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="collection_id"/>
+            </userInfo>
+        </attribute>
+        <userInfo>
+            <entry key="relatedByAttribute" value="subjectID"/>
+        </userInfo>
+    </entity>
+    <entity name="VAUserHostOwner" representedClassName="VAUserHostOwner" parentEntity="VAUser" syncable="YES">
+        <userInfo>
+            <entry key="relatedByAttribute" value="userID"/>
+        </userInfo>
+    </entity>
+    <entity name="VAUserHostSubject" representedClassName="VAUserHostSubject" parentEntity="VAWork" syncable="YES">
+        <userInfo>
+            <entry key="relatedByAttribute" value="workID"/>
+        </userInfo>
+    </entity>
+    <entity name="VAUserLikedSubject" representedClassName="VAUserLikedSubject" parentEntity="VAWork" syncable="YES">
+        <userInfo>
+            <entry key="relatedByAttribute" value="workID"/>
+        </userInfo>
+    </entity>
+    <entity name="VAUserSaleSubject" representedClassName="VAUserSaleSubject" parentEntity="VASaleSubject" syncable="YES">
+        <userInfo>
+            <entry key="relatedByAttribute" value="workID"/>
+        </userInfo>
+    </entity>
+    <entity name="VAWork" representedClassName="VAWork" syncable="YES">
+        <attribute name="bj" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="collectionID" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="collection_id"/>
+            </userInfo>
+        </attribute>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goodsNum" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="goods_num"/>
+            </userInfo>
+        </attribute>
+        <attribute name="h" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="height" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isBlock" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="is_block"/>
+            </userInfo>
+        </attribute>
+        <attribute name="isBuyable" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="is_buyable"/>
+            </userInfo>
+        </attribute>
+        <attribute name="isDel" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="is_del"/>
+            </userInfo>
+        </attribute>
+        <attribute name="isLiked" optional="YES" attributeType="Boolean" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="is_liked"/>
+            </userInfo>
+        </attribute>
+        <attribute name="isOwner" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="is_ownr"/>
+            </userInfo>
+        </attribute>
+        <attribute name="isSale" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="is_sale"/>
+            </userInfo>
+        </attribute>
+        <attribute name="isSecret" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="is_secret"/>
+            </userInfo>
+        </attribute>
+        <attribute name="isWaterMark" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="is_water_mark"/>
+            </userInfo>
+        </attribute>
+        <attribute name="level" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mailFee" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mark" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mtime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="number" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numComment" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="num_comment"/>
+            </userInfo>
+        </attribute>
+        <attribute name="numLiked" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="num_liked"/>
+            </userInfo>
+        </attribute>
+        <attribute name="numView" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="num_view"/>
+            </userInfo>
+        </attribute>
+        <attribute name="ownerID" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="owner_id"/>
+            </userInfo>
+        </attribute>
+        <attribute name="pid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="preview" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="quality" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rowType" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="row_type"/>
+            </userInfo>
+        </attribute>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tags" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="times" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="unit" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="w" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="width" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="workID" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="row_id"/>
+            </userInfo>
+        </attribute>
+        <attribute name="workType" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="work_type"/>
+            </userInfo>
+        </attribute>
+        <relationship name="artistSubject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VAArtistSubject" inverseName="works" inverseEntity="VAArtistSubject" syncable="YES"/>
+        <relationship name="cate" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VACategory" inverseName="art" inverseEntity="VACategory" syncable="YES"/>
+        <relationship name="liked" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="VAUser" inverseName="likedArt" inverseEntity="VAUser" syncable="YES"/>
+        <relationship name="pics" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="VAPicture" inverseName="art" inverseEntity="VAPicture" syncable="YES">
+            <userInfo>
+                <entry key="relatedByAttribute" value="pictureID"/>
+            </userInfo>
+        </relationship>
+        <relationship name="size" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VASize" inverseName="art" inverseEntity="VASize" syncable="YES">
+            <userInfo>
+                <entry key="relatedByAttribute" value="sizeID"/>
+            </userInfo>
+        </relationship>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VAUser" inverseName="art" inverseEntity="VAUser" syncable="YES"/>
+        <userInfo>
+            <entry key="relatedByAttribute" value="workID"/>
+        </userInfo>
+    </entity>
+    <elements>
+        <element name="VAArticleSubject" positionX="-947" positionY="-625" width="128" height="420"/>
+        <element name="VAArtistSubject" positionX="-785" positionY="-121" width="128" height="105"/>
+        <element name="VAArtSubject" positionX="-261" positionY="-576" width="128" height="45"/>
+        <element name="VACategory" positionX="-414" positionY="-283" width="128" height="105"/>
+        <element name="VAExhibitSubject" positionX="-279" positionY="-684" width="128" height="45"/>
+        <element name="VAHotSubject" positionX="-819" positionY="-684" width="128" height="45"/>
+        <element name="VAPersonageSubject" positionX="-414" positionY="-684" width="128" height="45"/>
+        <element name="VAPicture" positionX="-371" positionY="-162" width="128" height="120"/>
+        <element name="VAReadSubject" positionX="-549" positionY="-684" width="128" height="45"/>
+        <element name="VASaleSubject" positionX="-684" positionY="-684" width="128" height="45"/>
+        <element name="VASize" positionX="-342" positionY="-27" width="128" height="135"/>
+        <element name="VATag" positionX="-767" positionY="-324" width="128" height="75"/>
+        <element name="VAUser" positionX="-981" positionY="-160" width="128" height="450"/>
+        <element name="VAUserArticleSubject" positionX="-981" positionY="-684" width="128" height="45"/>
+        <element name="VAUserCollectionSubject" positionX="-261" positionY="-355" width="128" height="148"/>
+        <element name="VAUserHostOwner" positionX="-821" positionY="-198" width="128" height="45"/>
+        <element name="VAUserHostSubject" positionX="-261" positionY="-441" width="128" height="45"/>
+        <element name="VAUserLikedSubject" positionX="-261" positionY="-513" width="128" height="45"/>
+        <element name="VAUserSaleSubject" positionX="-684" positionY="-754" width="128" height="45"/>
+        <element name="VAWork" positionX="-603" positionY="-565" width="128" height="720"/>
+    </elements>
+</model>
